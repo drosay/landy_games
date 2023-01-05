@@ -26,7 +26,7 @@ const CarouselCard = () => {
   return (
     <Card sx={styles.cardStyle}>
       <CardContent sx={styles.cardContentStyle}>
-        <Typography variant="h1" sx={styles.titleStyle} mb={5}>
+        <Typography id='about' variant="h1" sx={styles.titleStyle} mb={5}>
           Landy Games
         </Typography>
         <Typography

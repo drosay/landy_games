@@ -1,0 +1,45 @@
+.game__card {
+    width: 10vw;
+    height: 10vw;
+    background-color: rgb(67, 20, 128);
+    border-radius: 4px;
+    border: thin solid 2px;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.card__name {
+    transition: all .5s;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.483);
+    color: white;
+    font-family: '8-bit';
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+    word-break:normal
+}
+
+.card__name > h2 {
+    font-size: 50%;
+}
+
+.card__name:hover {
+    opacity: 1;
+}
+
+.card__img {
+    border-radius: inherit;
+    width: 100%;
+}
+
+@media (max-width:540px){
+    .game__card {
+        width: 80vw;
+        height: 80vw;
+    }
+}
