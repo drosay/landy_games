@@ -1,6 +1,7 @@
 import fetchCredentials from "../services/fetch_credentials.js";
 import fetch_api from "../services/fetch_api.js";
 
+//TODO: Change to services, remove this hook
 async function fetchData(url, dataOptions = null, count = 1) {
   const response = await fetchCredentials();
 
