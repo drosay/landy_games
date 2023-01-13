@@ -4,6 +4,7 @@ import { formatImg, formatVideo } from "../../constants/lib/helpers.js";
 import { twitch_videos_url } from "../../constants/config/keys.js";
 import fetch_Data from "../../constants/services/fetch_Data.js";
 import { Typography } from "@mui/material";
+import Miniplayer from "./Miniplayer.jsx";
 
 function Game({ gameId, imgUrl, imgSize, name }) {
   const [state, setState] = useState(null);
@@ -59,7 +60,10 @@ function Video({ id, title }) {
   useEffect(fillData, [id, videoUrl]);
 
   return videoUrl ? (
+    <>
     <iframe src={videoUrl} title={title} height={300} width={400}></iframe>
+    <Miniplayer/>
+    </>
   ) : (
     <Typography variant="h5">No video yet</Typography>
   );
