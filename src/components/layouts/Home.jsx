@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Menu />
       <CarouselCard />
-      <Games/>
+      <Games />
     </>
   );
 };

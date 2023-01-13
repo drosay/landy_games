@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import Game from "./Game.jsx";
-import useFetchData from "../../constants/hooks/useFetchData.js";
 import { Grid, Skeleton } from "@mui/material";
 import "./styles/games.css";
 import { twitch_games_url } from "../../constants/config/keys.js";
+import fetch_Data from "../../constants/services/fetch_Data.js";
 
 function Games() {
-  const dataResponse = useFetchData;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +20,7 @@ function Games() {
 
   const fillData = () => {
     async function filler() {
-      const response = await dataResponse(twitch_games_url);
+      const response = await fetch_Data(twitch_games_url);
       setData(
         await Promise.all(
           response.data.map((game) => (
@@ -35,17 +34,22 @@ function Games() {
           ))
         )
       );
-
       setLoading(false);
     }
 
     filler();
   };
 
-  useEffect(fillData, [dataResponse]);
+  useEffect(fillData, []);
 
   return (
-    <Grid id='games' justifyContent="center" alignItems="flex-start" container spacing={5}>
+    <Grid
+      id="games"
+      justifyContent="center"
+      alignItems="flex-start"
+      container
+      spacing={5}
+    >
       {loading ? skeletons() : data}
     </Grid>
   );

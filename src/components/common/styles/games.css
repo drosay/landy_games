@@ -1,6 +1,6 @@
 .game__card {
-    width: 10vw;
-    height: 10vw;
+    width: 20vw;
+    height: 15vw;
     background-color: rgb(67, 20, 128);
     border-radius: 4px;
     border: thin solid 2px;
@@ -37,9 +37,9 @@
     width: 100%;
 }
 
-@media (max-width:540px){
+@media (max-width:600px){
     .game__card {
         width: 80vw;
-        height: 80vw;
+        height: 60vw;
     }
 }

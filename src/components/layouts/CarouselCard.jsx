@@ -1,45 +1,43 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import Slider from "../common/Slider";
 
-const CarouselCard = () => {
-  const styles = {
-    cardStyle: {
-      display: "flex",
-      justifyContent:'space-between',
-      flexDirection: { xs: "column-reverse", sm: "row" },
-      backgroundColor: "#f2f2f2",
-      padding: 0,
-    },
-    cardContentStyle: {
-      display: "inherit",
-      flexDirection: "column",
-      justifyContent: "center",
-      width: { xs: "100vw", sm: "58vw" },
-    },
-    cardMediaStyle: {
-      width: { xs: "100vw", sm: "40vw" },
-    },
-    titleStyle: {fontSize: { xs: "3rem", sm: "10rem" } },
-    secondaryStyle: { fontSize: { xs: "1", sm: "3rem" }, textAlign: "justify" },
-  };
+const styles = {
+  card: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: { xs: "column-reverse", sm: "row" },
+    backgroundColor: "#f2f2f2",
+    padding: 0,
+  },
+  cardContent: {
+    display: "inherit",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: { xs: "100vw", sm: "58vw" },
+  },
+  cardMedia: {
+    width: { xs: "100vw", sm: "40vw" },
+    height: { xs: "50vh", sm: "40vw" },
+  },
+  title: { fontSize: "9vw" },
+  secondary: { fontSize: '2vw' , textAlign: "justify" },
+};
 
+const CarouselCard = () => {
   return (
-    <Card sx={styles.cardStyle}>
-      <CardContent sx={styles.cardContentStyle}>
-        <Typography id='about' variant="h1" sx={styles.titleStyle} mb={5}>
+    <Card sx={styles.card}>
+      <CardContent sx={styles.cardContent}>
+        <Typography id="about" variant="h1" sx={styles.title} mb={5}>
           Landy Games
         </Typography>
-        <Typography
-          variant="h5"
-          color="text.secondary"
-          sx={styles.secondaryStyle}
-        >
+        <Typography variant="h5" color="text.secondary" sx={styles.secondary}>
           Un sitio web donde puedes buscar los streamers mas populares en
           twitch, las listas de posiciones de juegos con mas viewers o
-          simplemente navegar buscando informacio sobre juegos o app relevantes.
+          simplemente navegar buscando informacion sobre juegos o app
+          relevantes.
         </Typography>
       </CardContent>
-      <CardMedia sx={styles.cardMediaStyle}>
+      <CardMedia sx={styles.cardMedia}>
         <Slider />
       </CardMedia>
     </Card>
