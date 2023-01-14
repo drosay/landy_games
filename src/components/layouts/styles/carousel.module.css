@@ -1,0 +1,47 @@
+.carousel__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.carousel__content {
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 58vw;
+}
+.carousel__media {
+  width: 40vw;
+  height: 40vw;
+}
+
+.carousel__title {
+  font-size: 9vw !important;
+  margin-bottom: 5vw !important;
+}
+
+.carousel__secondary {
+  font-size: 2vw !important;
+  text-align: justify;
+  color: var(--secondary);
+}
+
+@media (max-width: 600px) {
+  .carousel__container {
+    flex-direction: column-reverse;
+  }
+  .carousel__content {
+    width: 100vw;
+  }
+  .carousel__media {
+    width: 100vw;
+    height: 47vh;
+  }
+  .carousel__title {
+    font-size: 12vw !important;
+    margin-bottom: 2vw !important;
+  }
+  .carousel__secondary {
+    font-size: 4vw !important;
+  }
+}

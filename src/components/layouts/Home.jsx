@@ -2,16 +2,15 @@ import Menu from "./Menu";
 import CarouselCard from "./CarouselCard";
 import Games from "../common/Games";
 import Miniplayer from "../common/Miniplayer";
+import { MiniplayerProvider } from "../../context/MiniplayerContext";
 
-const Home = () => {
+export default function Home() {
   return (
-    <>
+    <MiniplayerProvider>
       <Menu />
       <CarouselCard />
       <Games />
-      
-    </>
+      <Miniplayer />
+    </MiniplayerProvider>
   );
-};
-
-export default Home;
+}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import fetchData from '../../constants/services/fetch_Data.js'
-import {formatImg} from "../../constants/lib/helpers.js";
-import { twitch_games_url } from "../../constants/config/keys.js";
+import fetchData from '../../services/fetch_Data.js'
+import {formatImg} from "../../lib/helpers.js";
+import { twitch_games_url } from "../../config/keys.js";
 import Carousel from "react-material-ui-carousel";
 import Cover from "./Cover.jsx";
 import { Skeleton } from "@mui/material";

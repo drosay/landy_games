@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import Game from "./Game.jsx";
 import { Grid, Skeleton } from "@mui/material";
 import "./styles/games.css";
-import { twitch_games_url } from "../../constants/config/keys.js";
-import fetch_Data from "../../constants/services/fetch_Data.js";
+import { twitch_games_url } from "../../config/keys.js";
+import fetch_Data from "../../services/fetch_Data.js";
 
 function Games() {
   const [data, setData] = useState([]);

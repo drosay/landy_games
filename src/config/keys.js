@@ -3,7 +3,7 @@ const api_configuration = {
   twitch_games_url: "https://api.twitch.tv/helix/games/top",
   twitch_videos_url: "https://api.twitch.tv/helix/videos?",
   video_url_format:
-    "https://player.twitch.tv/?video=vVIDEO-ID&parent=localhost",
+    "https://player.twitch.tv/?video=vVIDEO-ID&parent=localhost&preload=metadata",
 };
 
 module.exports = api_configuration;

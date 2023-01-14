@@ -1,18 +1,23 @@
-*,*::after,*::before{
-    box-sizing: border-box;
-    padding: 0;
-    margin:0;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --secondary: #575757;
+  --main-background: #292929;
 }
 @font-face {
-    font-family: '8-bit';
-    src: url(./assets/fonts/8-bit-hud.ttf) format('truetype')
+  font-family: "8-bit";
+  src: url(./assets/fonts/8-bit-hud.ttf) format("truetype");
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-    font-size: 16px;
-    background-color:#292929;
-    font-family: '8-bit';
+body {
+  font-size: 16px;
+  background-color: var(--main-background);
+  font-family: "8-bit";
 }
-
