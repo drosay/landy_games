@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "8-bit";
+  src: url(./assets/fonts/8-bit-hud.ttf) format("truetype");
+}
+:root {
+  --secondary: #575757;
+  --main-background: #292929;
+}
 *,
 *::after,
 *::before {
@@ -5,19 +13,11 @@
   padding: 0;
   margin: 0;
 }
-:root {
-  --secondary: #575757;
-  --main-background: #292929;
-}
-@font-face {
-  font-family: "8-bit";
-  src: url(./assets/fonts/8-bit-hud.ttf) format("truetype");
-}
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
+
 body {
-  font-size: 16px;
   background-color: var(--main-background);
-  font-family: "8-bit";
 }

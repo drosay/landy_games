@@ -1,7 +1,7 @@
 import fetchCredentials from "./fetch_credentials.js";
 import fetch_api from "./fetch_api.js";
 
-async function fetchData(url, dataOptions = null, count = 1) {
+export default async function fetchData(url, dataOptions = null, count = 1) {
   const response = await fetchCredentials();
 
   if (count === 3) return response;
@@ -18,5 +18,3 @@ async function fetchData(url, dataOptions = null, count = 1) {
   const data = await fetch_api(url, { ...dataOptions, ...options });
   return data;
 }
-
-export default fetchData;

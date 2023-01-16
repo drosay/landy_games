@@ -1,4 +1,4 @@
-const fetch_api = async (url, options = null) => {
+export default async function fetch_api(url, options = null) {
   try {
     const response = await fetch(url, options);
     if (response.status !== 200)
@@ -12,6 +12,4 @@ const fetch_api = async (url, options = null) => {
   } catch (err) {
     return err;
   }
-};
-
-export default fetch_api;
+}

@@ -1,0 +1,33 @@
+.miniplayer__container {
+  width: 600px;
+  height: 400px;
+  background-color: black;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+}
+.miniplayer__btnGroup {
+  position: inherit;
+  right: 0;
+  margin: 20px;
+}
+.miniplayer__control {
+  position: absolute;
+  width: inherit;
+  height:60%;
+  background-color: transparent;
+}
+.miniplayer__control::after{
+    position: inherit;
+    content: '';
+    width: 40%;
+    height: 18%;
+    bottom: -65%;
+    right: 0;
+    background-color: inherit;
+}
+.miniplayer__iframe {
+  width: inherit;
+  height: inherit;
+}

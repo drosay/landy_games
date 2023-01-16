@@ -4,17 +4,7 @@ import { twitch_videos_url } from "../../config/keys.js";
 import { formatVideo } from "../../lib/helpers.js";
 import { Typography, Button, ButtonGroup } from "@mui/material";
 import fetch_Data from "../../services/fetch_Data.js";
-
-//TODO:Use css modules
-const styles = {
-  width: "600px",
-  height: "400px",
-  backgroundColor: "black",
-  position: "fixed",
-  bottom: 20,
-  right: 20,
-  zIndex: 2,
-};
+import styles from "./styles/miniplayer.module.css";
 
 export default function Miniplayer() {
   const [videoUrl, setVideoUrl] = useState(null);
@@ -27,7 +17,7 @@ export default function Miniplayer() {
       );
       setVideoUrl(formatVideo(response?.data[0]?.id));
     };
-    videoId ? getVideoUrl() : console.log("There is no video");
+    if (videoId) getVideoUrl();
   };
 
   const handleClick = () => {
@@ -37,19 +27,9 @@ export default function Miniplayer() {
   useEffect(fillData, [videoId, videoUrl]);
 
   return videoUrl ? (
-    <div style={styles}>
-      <div
-        style={{
-          position: "absolute",
-          width: "600px",
-          height: "400px",
-          backgroundColor: "transparent",
-        }}
-      >
-        <ButtonGroup
-          variant="contained"
-          sx={{ position: "inherit", right: 0, margin: 2 }}
-        >
+    <div className={styles.miniplayer__container}>
+      <div className={styles.miniplayer__control}>
+        <ButtonGroup variant="contained" className={styles.miniplayer__btnGroup}>
           <Button onClick={handleClick} color="secondary">
             Reproducir en otra ventana
           </Button>
@@ -61,8 +41,7 @@ export default function Miniplayer() {
       <iframe
         src={videoUrl}
         title="Miniplayer"
-        height={400}
-        width={600}
+        className={styles.miniplayer__iframe}
       ></iframe>
     </div>
   ) : (

@@ -1,4 +1,4 @@
-.game__card {
+.card__container {
     width: 20vw;
     height: 15vw;
     background-color: rgb(67, 20, 128);
@@ -8,7 +8,7 @@
     padding: 3px;
 }
 
-.card__name {
+.card__content {
     transition: all .5s;
     width: inherit;
     height: inherit;
@@ -24,23 +24,23 @@
     word-break:normal
 }
 
-.name {
+.card__title {
     font-size: 100% !important;
     font-family: '8-bit'!important;
     margin-bottom: 1vw !important;
 }
 
-.card__name:hover {
+.card__content:hover {
     opacity: 1;
 }
 
-.card__img {
+.card__media {
     border-radius: inherit;
     width: 100%;
 }
 
 @media (max-width:600px){
-    .game__card {
+    .card__container {
         width: 80vw;
         height: 60vw;
     }

@@ -1,0 +1,21 @@
+.slider__container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.slider__carousel,
+.slider__media {
+  width: 100%;
+  height: 100%;
+}
+.slider__progress {
+  width: 5vw !important;
+  height: 5vw !important;
+}
+@media (max-width: 600px) {
+  .slider__progress {
+    width: 10vw !important;
+    height: 10vw !important;
+  }
+}
