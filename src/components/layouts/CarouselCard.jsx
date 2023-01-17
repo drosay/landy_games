@@ -2,7 +2,7 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import Slider from "../common/Slider";
 import styles from "./styles/carousel.module.css";
 
-const CarouselCard = () => {
+export default function CarouselCard(){
   return (
     <Card className={styles.carousel__container}>
       <CardContent className={styles.carousel__content}>
@@ -22,5 +22,3 @@ const CarouselCard = () => {
     </Card>
   );
 };
-
-export default CarouselCard;

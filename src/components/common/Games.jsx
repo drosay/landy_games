@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useMiniplayerContext } from "../../context/MiniplayerContext.jsx";
 import { twitch_games_url } from "../../config/keys.js";
 import { formatImg } from "../../lib/helpers.js";
+import { Link } from "react-router-dom";
 import fetch_Data from "../../services/fetch_Data.js";
 import PropTypes from "prop-types";
 import styles from "./styles/game.module.css";
@@ -57,12 +58,12 @@ export default function Games() {
 }
 
 function Game({ gameId, imgUrl, imgSize, name }) {
-  const { setVideoId } = useMiniplayerContext();
+  const { setGameId } = useMiniplayerContext();
 
   imgUrl = formatImg(imgUrl);
 
   const handleClick = () => {
-    setVideoId(gameId);
+    setGameId(gameId);
   };
 
   return (
@@ -75,9 +76,17 @@ function Game({ gameId, imgUrl, imgSize, name }) {
           orientation="vertical"
           color="secondary"
           variant="contained"
+          size="small"
         >
           <Button onClick={handleClick}>Play Last clip</Button>
-          <Button onClick={handleClick}>Latest Clips</Button>
+          <Button>
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              to={`/clips/${gameId}`}
+            >
+              Latest Clips
+            </Link>
+          </Button>
         </ButtonGroup>
       </div>
       <img

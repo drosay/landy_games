@@ -1,37 +1,36 @@
 import { useState, useEffect } from "react";
 import { useMiniplayerContext } from "../../context/MiniplayerContext.jsx";
-import { twitch_videos_url } from "../../config/keys.js";
-import { formatVideo } from "../../lib/helpers.js";
-import { Typography, Button, ButtonGroup } from "@mui/material";
-import fetch_Data from "../../services/fetch_Data.js";
+import { Button, ButtonGroup } from "@mui/material";
+import { Link } from "react-router-dom";
 import styles from "./styles/miniplayer.module.css";
+import useVideoClip from "../../hooks/useVideoClip.js";
 
 export default function Miniplayer() {
   const [videoUrl, setVideoUrl] = useState(null);
-  const { videoId, setVideoId } = useMiniplayerContext();
-
-  const fillData = () => {
-    const getVideoUrl = async () => {
-      const response = await fetch_Data(
-        `${twitch_videos_url}game_id=${videoId}&first=1&language=en`
-      );
-      setVideoUrl(formatVideo(response?.data[0]?.id));
-    };
-    if (videoId) getVideoUrl();
-  };
-
+  const { gameId, removeGameId } = useMiniplayerContext();
+  //useVideoClip hook returns an object, so we catch videoUrl  as url value with videoId state who changes in every render
+  const { videoUrl: url, id: videoId } = useVideoClip(gameId);
   const handleClick = () => {
-    setVideoId(null);
-    setVideoUrl(null);
+    removeGameId(); //remove the id so the url become null
+    setVideoUrl(null); //set the state to null to avoid errors
   };
-  useEffect(fillData, [videoId, videoUrl]);
+
+  useEffect(() => {
+    setVideoUrl(url);
+  }, [url]);
 
   return videoUrl ? (
     <div className={styles.miniplayer__container}>
       <div className={styles.miniplayer__control}>
-        <ButtonGroup variant="contained" className={styles.miniplayer__btnGroup}>
+        <ButtonGroup
+          size="small"
+          variant="contained"
+          className={styles.miniplayer__btnGroup}
+        >
           <Button onClick={handleClick} color="secondary">
-            Reproducir en otra ventana
+            <Link to={`/clips/${gameId}/${videoId}`}>
+              Reproducir en otra ventana
+            </Link>
           </Button>
           <Button onClick={handleClick} color="error">
             Close
@@ -45,6 +44,6 @@ export default function Miniplayer() {
       ></iframe>
     </div>
   ) : (
-    <Typography variant="h5">No video yet</Typography>
+    <></>
   );
 }
