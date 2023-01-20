@@ -27,8 +27,8 @@ export default function Miniplayer() {
           variant="contained"
           className={styles.miniplayer__btnGroup}
         >
-          <Button onClick={handleClick} color="secondary">
-            <Link to={`/clips/${gameId}/${videoId}`}>
+          <Button  color="secondary">
+            <Link onClick={handleClick} to={`/clips/${gameId}/${videoId}`}>
               Reproducir en otra ventana
             </Link>
           </Button>
