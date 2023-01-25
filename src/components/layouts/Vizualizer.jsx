@@ -42,7 +42,7 @@ export default function Vizualizer() {
     <>
       {/* for Container, Media and Content the keyword className does not works, so i use nstyle to add class names like a prop */}
       <Container nstyles={styles.clip__container}>
-        <Box  className={styles.clip__box}>
+        <Box className={styles.clip__box}>
           <Media nstyles={styles.clip__media}>
             {clip?.videoUrl ? (
               <iframe
@@ -73,18 +73,21 @@ export default function Vizualizer() {
               <Typography variant="body2">{clip?.description}</Typography>
             ) : (
               <>
-                <Typography variant="body2">Description:</Typography>
-                <Skeleton /> <Skeleton width="70%" />
+                <Typography variant="body2">
+                If you see this, the streamer did not put any description.
+                  <br />
+                  <br />
+                  Very lazy...
+                </Typography>
               </>
             )}
           </Content>
         </Box>
         <Clips data={data} />
       </Container>
-      <Typography sx={{ color: "white" }} variant="h2">
-        Other games that you can view
+      <Typography sx={{ color: "white", textAlign:'center',fontSize:'5vw'}} variant="h2">
+        OTHER GAMES THAT YOU CAN WATCH
       </Typography>
-
       <Games />
     </>
   );

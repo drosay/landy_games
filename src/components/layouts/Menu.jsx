@@ -13,7 +13,7 @@ import {
 import { twitch_query_url } from "../../config/keys.js";
 import fetchData from "../../services/fetch_Data";
 
-//TODO: REFACTORIZE CODE, SEPARATE STYLES AND MAKE GOOD STYLES, COMPONENTS 
+//TODO: REFACTORIZE CODE, SEPARATE STYLES AND MAKE GOOD STYLES, COMPONENTS
 
 export default function Menu() {
   const styles = { textDecoration: "none", color: "inherit" };
@@ -21,16 +21,21 @@ export default function Menu() {
     <>
       <AppBar position="static" sx={{ backgroundColor: "inherit" }}>
         <Toolbar>
-          <Typography mr={2} color="inherit" variant="h5">
+          <Typography
+            sx={{ fontSize: { xs: "5vw", sm: "1.5vw" } }}
+            mr={2}
+            color="inherit"
+            variant="h5"
+          >
             <Link to="/" style={styles}>
               Home
             </Link>
           </Typography>
-          <Typography color="inherit" variant="h5">
+          {/* <Typography color="inherit" variant="h5">
             <Link to="/some-page-that-not-exist" style={styles}>
               Not found button
             </Link>
-          </Typography>
+          </Typography> */}
           <Search />
         </Toolbar>
       </AppBar>
@@ -52,15 +57,14 @@ function Search() {
   };
 
   const handleChange = (e) => {
-    setData(null)
+    setData(null);
     setQuery(e.target.value);
-    
   };
-  
-  const handleClick = (e) =>{
-    setData(null)
+
+  const handleClick = (e) => {
+    setData(null);
     setQuery(null);
-  }
+  };
   useEffect(fillData, [query]);
 
   return (
@@ -71,22 +75,32 @@ function Search() {
         variant="standard"
         label="Search videogame"
         type={"text"}
-        
       />
-      <Box sx={{maxHeight:400,width:'100%', maxWidth:400, overflowY:'auto',overflowX:'hidden',position:'absolute',top:100,backgroundColor:'black'}}>
-        {data?.map(item =>{
-          return <Link onClick={handleClick} to={`/vizualize/${item.id}`} >
-          <RenderRow text={item.name} />
-        </Link>
+      <Box
+        sx={{
+          maxHeight: 400,
+          width: "100%",
+          maxWidth: 400,
+          overflowY: "auto",
+          overflowX: "hidden",
+          position: "absolute",
+          top: 100,
+          backgroundColor: "black",
+        }}
+      >
+        {data?.map((item) => {
+          return (
+            <Link onClick={handleClick} to={`/vizualize/${item.id}`}>
+              <RenderRow text={item.name} />
+            </Link>
+          );
         })}
       </Box>
-      
     </>
   );
 }
 
-function RenderRow({text}) {
-  
+function RenderRow({ text }) {
   return (
     <ListItem component="div" disablePadding>
       <ListItemButton>
