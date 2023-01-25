@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding:0;
+  margin-bottom: 2vw;
+  background-color: white;
+  border-radius: 0!important;
+}
+.container__content {
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  width: 58vw;
+}
+.container__media {
+  width: 40vw;
+  height: 40vw;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .container__content {
+    width: 100vw;
+  }
+  .container__media {
+    width: 100vw;
+    height: 47vh;
+  }
+}

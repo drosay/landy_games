@@ -1,24 +1,29 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Container, Content, Media } from "./Container";
 import Slider from "../common/Slider";
-import styles from "./styles/carousel.module.css";
+import Typography from "@mui/material/Typography";
+import carousel from "./styles/carousel.module.css";
 
-export default function CarouselCard(){
+export default function CarouselCard() {
   return (
-    <Card className={styles.carousel__container}>
-      <CardContent className={styles.carousel__content}>
-        <Typography id="about" variant="h1" className={styles.carousel__title}>
+    <Container>
+      <Content>
+        <Typography
+          id="about"
+          variant="h1"
+          className={carousel.carousel__title}
+        >
           Landy Games
         </Typography>
-        <Typography variant="body1" className={styles.carousel__secondary}>
+        <Typography variant="body1" className={carousel.carousel__secondary}>
           Un sitio web donde puedes buscar los streamers mas populares en
           twitch, las listas de posiciones de juegos con mas viewers o
           simplemente navegar buscando informacion sobre juegos o app
           relevantes.
         </Typography>
-      </CardContent>
-      <CardMedia className={styles.carousel__media}>
+      </Content>
+      <Media>
         <Slider />
-      </CardMedia>
-    </Card>
+      </Media>
+    </Container>
   );
-};
+}

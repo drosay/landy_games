@@ -3,7 +3,7 @@ import fetch_api from "./fetch_api.js";
 
 export default async function fetchData(url, dataOptions = null, count = 1) {
   const response = await fetchCredentials();
-
+  
   if (count === 3) return response;
   if (response.fetch_error && count < 3)
     return fetchData(url, dataOptions, count++);

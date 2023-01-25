@@ -1,54 +1,78 @@
 .clip__container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin-bottom: 2vw;
-    height: 40vw;
-  }
-  .clip__content {
-    display: inherit;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
-    width: 58vw;
-  }
+  margin-top: 10px;
+  height: 100vh;
+}
+.clip__box {
+  width: 70vw !important;
+}
+.clip__grid {
+  background-color: var(--main-background);
+  width: 30vw!important;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.clip__content {
+}
+
+.clip__media {
+  width: 100%;
+  height: 35vw;
+  background-color: var(--main-background) !important;
+}
+
+.clip__iframe {
+  border: none;
+}
+
+.clip__iframe__box {
+  background-color: black;
+}
+.clip__media,
+.clip__iframe__box {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.clip__iframe,
+.clip__box {
+  width: 55vw;
+  height: 33vw;
+}
+
+.clip__title {
+  font-size: 9vw !important;
+  margin-bottom: 5vw !important;
+}
+
+.clip__secondary {
+  font-size: 2vw !important;
+  text-align: justify;
+  color: var(--secondary);
+}
+
+@media (max-width: 600px) {
+  .clip__content,
   .clip__media {
-    width: 40vw;
-    height: 40vw;
+    height: 30vh;
   }
-  .clip__iframe{
-    width: 55vw;
-    height: 33vw;
+  .clip__content,
+  .clip__media {
+    width: 100vw;
   }
-  
+
+  .clip__iframe,
+  .clip__box {
+    width: 90vw;
+    height: 50.9vw;
+  }
+
   .clip__title {
-    font-size: 9vw !important;
-    margin-bottom: 5vw !important;
+    font-size: 12vw !important;
+    margin-bottom: 2vw !important;
   }
-  
   .clip__secondary {
-    font-size: 2vw !important;
-    text-align: justify;
-    color: var(--secondary);
+    font-size: 4vw !important;
   }
-  
-  @media (max-width: 600px) {
-    .clip__container {
-      flex-direction: column-reverse;
-    }
-    .clip__content {
-      width: 100vw;
-    }
-    .clip__media {
-      width: 100vw;
-      height: 47vh;
-    }
-    .clip__title {
-      font-size: 12vw !important;
-      margin-bottom: 2vw !important;
-    }
-    .clip__secondary {
-      font-size: 4vw !important;
-    }
-  }
-  
+}

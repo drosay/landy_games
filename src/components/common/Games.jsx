@@ -100,7 +100,7 @@ function Game({ gameId, imgUrl, imgSize, name }) {
           <Button>
             <Link
               style={{ textDecoration: "none", color: "inherit" }}
-              to={`/clips/${gameId}`}
+              to={`/vizualize/${gameId}`}
             >
               Latest Clips
             </Link>

@@ -27,8 +27,8 @@ export default function Menu() {
             </Link>
           </Typography>
           <Typography color="inherit" variant="h5">
-            <Link to="/Clips" style={styles}>
-              Clips
+            <Link to="/some-page-that-not-exist" style={styles}>
+              Not found button
             </Link>
           </Typography>
           <Search />
@@ -75,7 +75,7 @@ function Search() {
       />
       <Box sx={{maxHeight:400,width:'100%', maxWidth:400, overflowY:'auto',overflowX:'hidden',position:'absolute',top:100,backgroundColor:'black'}}>
         {data?.map(item =>{
-          return <Link onClick={handleClick} to={`/clips/${item.id}`} >
+          return <Link onClick={handleClick} to={`/vizualize/${item.id}`} >
           <RenderRow text={item.name} />
         </Link>
         })}
