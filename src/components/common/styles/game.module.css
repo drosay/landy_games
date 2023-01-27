@@ -9,11 +9,11 @@
 }
 
 .card__content {
-    transition: all .5s;
+    transition: .5s;
     width: inherit;
     height: inherit;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.483);
+    background-color: var(--blacko4);
     color: white;
     opacity: 0;
     display: flex;

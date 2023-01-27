@@ -5,6 +5,7 @@
 :root {
   --secondary: #575757;
   --main-background: #292929;
+  --blacko4:rgba(0, 0, 0, 0.483);
 }
 *,
 *::after,

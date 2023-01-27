@@ -1,0 +1,37 @@
+.clips__button {
+  position: absolute!important;
+  margin: 20px!important;
+  width: 300px;
+  height: 200px;
+  color: white!important;
+  opacity: .3;
+  transition: 0.5s;
+}
+.clips__title {
+background-color: var(--blacko4);
+width: 300px;
+  color: white;
+  position:absolute;
+  margin: 20px 20px 0 20px;
+  z-index: 1;
+}
+
+.clips__button:hover {
+  background-color: var(--blacko4)!important;
+  opacity: 1;
+}
+
+.clips__grid {
+  background-color: var(--main-background);
+  width: 30vw !important;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .clips__grid {
+    height: 50vh;
+    width: 90vw !important;
+    margin: 10px auto;
+  }
+}

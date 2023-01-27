@@ -39,3 +39,10 @@
   width: inherit;
   height: inherit;
 }
+
+@media (max-width: 600px) {
+  .miniplayer__container {
+    width: 80vw;
+    height: 50vw;
+  }
+}

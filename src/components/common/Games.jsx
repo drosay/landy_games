@@ -34,7 +34,7 @@ export default function Games() {
               <Grid item key={game.id.toString()}>
                 <Game
                   gameId={game.id}
-                  imgUrl={game.box_art_url}
+                  imgUrl={formatImg(game.box_art_url)}
                   name={game.name}
                 />
               </Grid>
@@ -75,10 +75,8 @@ export default function Games() {
   );
 }
 
-function Game({ gameId, imgUrl, imgSize, name }) {
+export function Game({ gameId, imgUrl, imgSize, name }) {
   const { setGameId } = useMiniplayerContext();
-
-  imgUrl = formatImg(imgUrl);
 
   const handleClick = () => {
     setGameId(gameId);

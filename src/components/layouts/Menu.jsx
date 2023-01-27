@@ -65,13 +65,21 @@ function Search() {
     setData(null);
     setQuery(null);
   };
+
+  const handleBlur = (e) => {
+    setTimeout(() => {
+      setData(null);
+    }, 400);
+  };
+
   useEffect(fillData, [query]);
 
   return (
-    <>
+    <div style={{ width: '50vw',position:'relative' }}>
       <TextField
-        sx={{ width: 500 }}
+        sx={{ width: {xs:'70vw',sm:'30vw'} }}
         onChange={handleChange}
+        onBlur={handleBlur}
         variant="standard"
         label="Search videogame"
         type={"text"}
@@ -79,24 +87,26 @@ function Search() {
       <Box
         sx={{
           maxHeight: 400,
-          width: "100%",
-          maxWidth: 400,
+          width: {xs:'70vw',sm:'30vw'},
           overflowY: "auto",
           overflowX: "hidden",
           position: "absolute",
-          top: 100,
-          backgroundColor: "black",
+          backgroundColor: "var(--main-background)",
         }}
       >
         {data?.map((item) => {
           return (
-            <Link onClick={handleClick} to={`/vizualize/${item.id}`}>
+            <Link
+              onClick={handleClick}
+              to={`/vizualize/${item.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <RenderRow text={item.name} />
             </Link>
           );
         })}
       </Box>
-    </>
+    </div>
   );
 }
 
