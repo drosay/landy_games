@@ -77,12 +77,13 @@ function Search() {
   return (
     <div style={{ width: '50vw',position:'relative' }}>
       <TextField
-        sx={{ width: {xs:'70vw',sm:'30vw'} }}
+        sx={{ width: {xs:'70vw',sm:'30vw'}}}
+        color='secondary'
         onChange={handleChange}
         onBlur={handleBlur}
         variant="standard"
         label="Search videogame"
-        type={"text"}
+        
       />
       <Box
         sx={{
