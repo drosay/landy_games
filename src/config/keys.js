@@ -6,7 +6,7 @@ const api_configuration = {
   twitch_videos_url: "https://api.twitch.tv/helix/videos?",
   twitch_query_url: "https://api.twitch.tv/helix/search/categories?query=",
   video_url_format:
-    "https://player.twitch.tv/?video=vVIDEO-ID&parent=localhost&parent=https://landy-games.vercel.app/&preload=metadata",
+    "https://player.twitch.tv/?video=vVIDEO-ID&parent=localhost&parent=https://landy-games.vercel.app/&parent=https://vercel.com&preload=metadata",
 };
 
 module.exports = api_configuration;
