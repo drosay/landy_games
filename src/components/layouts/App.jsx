@@ -13,7 +13,7 @@ export default function App() {
         <Menu />
         <Routes>
           <Route
-            path="/"
+            path={["/","/landy_games"]}
             element={
               <>
                 <CarouselCard />
