@@ -1,7 +1,7 @@
 //Configure when build
 const api_configuration = {
   //in dev http://localhost:3500/ railway api https://landygames.up.railway.app/
-  api_credentials_url: "http://localhost:3500",
+  api_credentials_url: "https://twitch-access-token-private.vercel.app/",
   twitch_games_url: "https://api.twitch.tv/helix/games/top?",
   twitch_videos_url: "https://api.twitch.tv/helix/videos?",
   twitch_query_url: "https://api.twitch.tv/helix/search/categories?query=",

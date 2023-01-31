@@ -13,8 +13,6 @@ import {
 import { twitch_query_url } from "../../config/keys.js";
 import fetchData from "../../services/fetch_Data";
 
-//TODO: REFACTORIZE CODE, SEPARATE STYLES AND MAKE GOOD STYLES, COMPONENTS
-
 export default function Menu() {
   const styles = { textDecoration: "none", color: "inherit" };
   return (
