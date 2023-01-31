@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/landy_games/static/css/main.f9e7c2a5.css",
+    "main.js": "/landy_games/static/js/main.73a473c0.js",
+    "static/media/8-bit-hud.ttf": "/landy_games/static/media/8-bit-hud.c7d4d4fed9fa9830b710.ttf",
+    "index.html": "/landy_games/index.html",
+    "main.f9e7c2a5.css.map": "/landy_games/static/css/main.f9e7c2a5.css.map",
+    "main.73a473c0.js.map": "/landy_games/static/js/main.73a473c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9e7c2a5.css",
+    "static/js/main.73a473c0.js"
+  ]
+}
